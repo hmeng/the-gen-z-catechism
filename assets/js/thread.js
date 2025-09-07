@@ -150,6 +150,7 @@
     if (!thread) return;
     try { wrapMainPost(thread); } catch(e) { /* noop */ }
     try { wrapComments(thread); } catch(e) { /* noop */ }
+    try { linkRelatedPosts(thread); } catch(e) { /* noop */ }
   }
 
   if (document.readyState === 'loading') {
@@ -191,4 +192,18 @@ function hashHue(str) {
   let h = 0;
   for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0;
   return h % 360;
+}
+
+// Related posts helpers
+function linkRelatedPosts(root){
+  const paras = Array.from(root.querySelectorAll('p'));
+  const rel = paras.find(p => /^\s*(🔗\s*)?Related\s*Posts:/i.test(p.textContent));
+  if (!rel) return;
+  const m = (window.location.pathname || '').match(/^(.*)\/chapters\//);
+  const base = m ? m[1] : '';
+  rel.innerHTML = rel.innerHTML.replace(/#(\d{1,2})\s*\(([^)]+)\)/g, (all, n, title) => {
+    const num = String(n).padStart(2,'0');
+    const href = `${base}/chapters/post-${num}/`;
+    return `<a href="${href}">#${n} (${title})</a>`;
+  });
 }

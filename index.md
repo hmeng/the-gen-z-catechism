@@ -5,20 +5,11 @@ title: The Gen Z Catechism
 
 # The Gen Z Catechism
 
-Welcome. This site presents the full “Gen Z Catechism” as 60 short, social-post–style chapters.
+Scroll the feed below or open a chapter.
 
-Browse the chapters below:
-
-{% assign pages_sorted = site.pages | sort: 'path' %}
-<ul class="chapters-list">
-{% assign count = 0 %}
-{% for p in pages_sorted %}
-  {% if p.path contains 'chapters/post-' %}
-    <li><a href="{{ p.url }}">{{ p.title | default: p.name }}</a></li>
-    {% assign count = count | plus: 1 %}
-  {% endif %}
-{% endfor %}
-  </ul>
-{% if count == 0 %}
-  <p>No chapters found yet.</p>
-{% endif %}
+<div id="feed" class="feed" data-endpoint="{{ '/search.json' | relative_url }}">
+  <p>Loading posts…</p>
+  <noscript>
+    <p>This feed requires JavaScript. Open <a href="{{ '/chapters/' | relative_url }}">All Chapters</a> instead.</p>
+  </noscript>
+</div>

@@ -30,6 +30,18 @@ body {
 
 .content h1 { margin-top: 10px; }
 
+/* Feed tiles */
+.feed { display: grid; gap: 16px; margin-top: 6px; }
+.tile { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; box-shadow: 0 1px 0 rgba(0,0,0,.04); }
+.tile__title { font-size: 18px; margin: 0 0 4px; }
+.tile__title a { color: var(--text); text-decoration: none; }
+.tile__title a:hover { text-decoration: underline; }
+.tile__meta { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+.tile__excerpt p { margin: 8px 0; }
+.tile__actions { margin-top: 6px; font-size: 14px; }
+.tile__actions a { color: var(--accent); text-decoration: none; }
+.tile__actions a:hover { text-decoration: underline; }
+
 /* Chapter prev/next */
 .chapter-nav { margin: 8px 0 18px; display: flex; justify-content: space-between; gap: .5rem; }
 .chapter-nav a { color: var(--accent); text-decoration: none; }
