@@ -6,7 +6,7 @@ permalink: /search.json
 {% assign first = true %}
 {% for p in site.pages %}
   {% assign in_chapters = p.path contains 'chapters/' %}
-  {% assign include_doc = p.url == '/catechism-outline/' or p.url == '/implementation-guide/' or p.url == '/sample-posts/' %}
+  {% assign include_doc = p.url == '/catechism-outline/' %}
   {% if in_chapters or include_doc %}
     {% assign h1 = p.content | split: '\n' | first | replace: '# ', '' %}
     {% if first %}{% assign first = false %}{% else %},{% endif %}

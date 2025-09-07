@@ -75,6 +75,8 @@
     metaDiv.appendChild(split.metaP);
     if (split.bodyP) bodyDiv.appendChild(split.bodyP);
     setAvatarFromMeta(metaDiv, avatar);
+    // Remove original mixed meta/body paragraph now that we've split it
+    anchor.remove();
 
     // Move paragraphs between firstMetaIdx and endIdx into body (skip metrics; we’ll add separately)
     const toMove = [];
@@ -98,51 +100,48 @@
   }
 
   function wrapComments(root) {
-    const nodes = Array.from(root.children);
     let inComments = false;
-    for (let i = 0; i < nodes.length; i++) {
-      const el = nodes[i];
-      if (isPara(el) && /\bComments\b/i.test(el.textContent)) { inComments = true; continue; }
-      if (!inComments) continue;
-      if (isMetaPara(el)) {
-        const meta = el;
-        const wrapper = document.createElement('div');
-        wrapper.className = 'comment';
-        const avatar = document.createElement('span');
-        avatar.className = 'avatar';
-        const metaDiv = document.createElement('div');
-        metaDiv.className = 'meta';
-        
-        // Insert wrapper at the meta's original position BEFORE moving nodes
-        const anchor = meta;
-        root.insertBefore(wrapper, anchor);
-        
-        // Now move nodes into wrapper
-        // Split meta paragraph if it includes body text
-        const split = splitMetaParagraph(anchor);
-        metaDiv.appendChild(split.metaP);
-        setAvatarFromMeta(metaDiv, avatar);
-        wrapper.appendChild(avatar);
-        wrapper.appendChild(metaDiv);
+    let el = root.firstElementChild;
+    while (el) {
+      if (isPara(el) && /\bComments\b/i.test(el.textContent)) { inComments = true; el = el.nextElementSibling; continue; }
+      if (!inComments) { el = el.nextElementSibling; continue; }
+      if (!isMetaPara(el)) { el = el.nextElementSibling; continue; }
 
-        const body = [];
-        let j = i + 1;
-        while (j < nodes.length) {
-          const nxt = nodes[j];
-          if (!nxt) break;
-          if (isHR(nxt) || isMetaPara(nxt)) break;
-          if (isPara(nxt)) { body.push(nxt); } else { break; }
-          j++;
-        }
-        const bodyDiv = document.createElement('div');
-        bodyDiv.className = 'body';
-        if (split.bodyP) bodyDiv.appendChild(split.bodyP);
-        body.forEach(p => bodyDiv.appendChild(p));
-        metaDiv.appendChild(bodyDiv);
+      const anchor = el;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'comment';
+      const avatar = document.createElement('span');
+      avatar.className = 'avatar';
+      const metaDiv = document.createElement('div');
+      metaDiv.className = 'meta';
 
-        root.insertBefore(wrapper, meta);
-        i = j - 1;
+      // Insert wrapper before the anchor, then move nodes into it
+      root.insertBefore(wrapper, anchor);
+
+      const split = splitMetaParagraph(anchor);
+      metaDiv.appendChild(split.metaP);
+      setAvatarFromMeta(metaDiv, avatar);
+      anchor.remove();
+
+      const bodyDiv = document.createElement('div');
+      bodyDiv.className = 'body';
+      if (split.bodyP) bodyDiv.appendChild(split.bodyP);
+
+      // Collect subsequent paragraph siblings as body until HR or next meta
+      let nxt = wrapper.nextElementSibling;
+      while (nxt && !isHR(nxt) && !isMetaPara(nxt)) {
+        if (!isPara(nxt)) break;
+        const move = nxt;
+        nxt = nxt.nextElementSibling;
+        bodyDiv.appendChild(move);
       }
+
+      metaDiv.appendChild(bodyDiv);
+      wrapper.appendChild(avatar);
+      wrapper.appendChild(metaDiv);
+
+      // Continue from the next sibling after the wrapper (already set in nxt)
+      el = wrapper.nextElementSibling;
     }
   }
 
@@ -163,15 +162,28 @@
 // Avatar helpers
 function setAvatarFromMeta(metaRoot, avatarEl) {
   try {
-    const strong = metaRoot.querySelector('strong');
-    if (!strong) return;
-    const handle = strong.textContent.trim(); // like @TheGenZCatechism
+    // Prefer the first <strong> that starts with '@'
+    let handle = null;
+    const strongs = metaRoot.querySelectorAll('strong');
+    for (const s of strongs) {
+      const t = (s.textContent || '').trim();
+      if (/^@/.test(t)) { handle = t; break; }
+    }
+    // Fallback: regex from the full text
+    if (!handle) {
+      const m = (metaRoot.textContent || '').match(/@[A-Za-z0-9_\.\-]+/);
+      if (m) handle = m[0];
+    }
+    if (!handle) return; // no handle found
+
     const initial = (handle.replace(/^@/, '')[0] || '•').toUpperCase();
     const hue = hashHue(handle);
     avatarEl.textContent = initial;
-    avatarEl.style.backgroundColor = `hsl(${hue} 70% 45%)`;
+    // Use widely-supported comma syntax for HSL
+    avatarEl.style.backgroundColor = `hsl(${hue}, 70%, 45%)`;
     avatarEl.style.border = 'none';
     avatarEl.title = handle;
+    avatarEl.setAttribute('data-handle', handle);
   } catch (_) {}
 }
 
