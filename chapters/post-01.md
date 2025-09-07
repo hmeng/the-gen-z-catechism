@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 01"
+layout: chapter
+title: "Post #1: What's the point of life?"
 ---
 # Post #1: What's the point of life?
 

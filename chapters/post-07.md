@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 07"
+layout: chapter
+title: "Post #7: What does the Bible teach?"
 ---
 # Post #7: What does the Bible teach?
 

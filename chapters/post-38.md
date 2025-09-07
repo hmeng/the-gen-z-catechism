@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 38"
+layout: chapter
+title: "Post #38: Are we secure in our salvation?"
 ---
 # Post #38: Are we secure in our salvation?
 

@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 08"
+layout: chapter
+title: "Post #8: How should we read the Bible?"
 ---
 # Post #8: How should we read the Bible?
 

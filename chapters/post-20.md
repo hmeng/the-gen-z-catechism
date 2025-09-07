@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 20"
+layout: chapter
+title: "Post #20: What about singleness?"
 ---
 # Post #20: What about singleness?
 

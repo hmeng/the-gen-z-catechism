@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 32"
+layout: chapter
+title: "Post #32: What did Jesus accomplish?"
 ---
 # Post #32: What did Jesus accomplish?
 

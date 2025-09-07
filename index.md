@@ -9,14 +9,16 @@ Welcome. This site presents the full “Gen Z Catechism” as 60 short, social-p
 
 Browse the chapters below:
 
-{% assign chapters = site.pages | where_exp: "p", "p.path contains 'chapters/'" | sort: "path" %}
-{% if chapters and chapters.size > 0 %}
-<ul>
-{% for p in chapters %}
-  <li><a href="{{ p.url }}">{{ p.title | default: p.name }}</a></li>
+{% assign pages_sorted = site.pages | sort: 'path' %}
+<ul class="chapters-list">
+{% assign count = 0 %}
+{% for p in pages_sorted %}
+  {% if p.path contains 'chapters/post-' %}
+    <li><a href="{{ p.url }}">{{ p.title | default: p.name }}</a></li>
+    {% assign count = count | plus: 1 %}
+  {% endif %}
 {% endfor %}
   </ul>
-{% else %}
-<p>No chapters found yet.</p>
+{% if count == 0 %}
+  <p>No chapters found yet.</p>
 {% endif %}
-

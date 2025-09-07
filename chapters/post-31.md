@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 31"
+layout: chapter
+title: "Post #31: Why did Jesus come?"
 ---
 # Post #31: Why did Jesus come?
 

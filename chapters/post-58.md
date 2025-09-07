@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 58"
+layout: chapter
+title: "Post #58: What is the final judgment?"
 ---
 # Post #58: What is the final judgment?
 

@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 17"
+layout: chapter
+title: "Post #17: Do humans have free will?"
 ---
 # Post #17: Do humans have free will?
 

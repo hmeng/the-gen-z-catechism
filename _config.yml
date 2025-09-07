@@ -1,18 +1,16 @@
 title: The Gen Z Catechism
-description: A 60‑post catechism for Gen Z — presented as a simple Jekyll site.
+description: 60 social-media style posts to train up the next generation in the Word of God.
 url: "" # set your custom domain here if using one
 baseurl: "" # for project pages, set to "/<repo>"
 
-# Use a GitHub Pages supported theme via remote_theme
-remote_theme: pages-themes/cayman@v0.2.0
+# Plugins (all supported by GitHub Pages)
 plugins:
-  - jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Pretty URLs for pages (e.g., /chapters/post-01/)
 permalink: pretty
 
 # Exclude non-site files from the build
 exclude:
-  - README.md
   - gen-z-catechism.pdf
-

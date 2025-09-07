@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 53"
+layout: chapter
+title: "Post #53: How do we share our faith?"
 ---
 # Post #53: How do we share our faith?
 

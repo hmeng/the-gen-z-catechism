@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 15"
+layout: chapter
+title: "Post #15: What did God want from the first humans?"
 ---
 # Post #15: What did God want from the first humans?
 

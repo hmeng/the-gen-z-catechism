@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 14"
+layout: chapter
+title: "Post #14: How were we originally created?"
 ---
 # Post #14: How were we originally created?
 

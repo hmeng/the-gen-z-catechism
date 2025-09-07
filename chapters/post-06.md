@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 06"
+layout: chapter
+title: "Post #6: Is the Bible actually God's Word?"
 ---
 # Post #6: Is the Bible actually God's Word?
 

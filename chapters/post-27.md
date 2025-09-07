@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 27"
+layout: chapter
+title: "Post #27: What is God's justice?"
 ---
 # Post #27: What is God's justice?
 

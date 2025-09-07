@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 18"
+layout: chapter
+title: "Post #18: What does it mean to be male and female?"
 ---
 # Post #18: What does it mean to be male and female?
 

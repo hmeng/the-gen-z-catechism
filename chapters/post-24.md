@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 24"
+layout: chapter
+title: "Post #24: What are the consequences of sin?"
 ---
 # Post #24: What are the consequences of sin?
 

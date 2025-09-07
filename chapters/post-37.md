@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 37"
+layout: chapter
+title: "Post #37: What happens when we're saved?"
 ---
 # Post #37: What happens when we're saved?
 

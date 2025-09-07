@@ -1,0 +1,35 @@
+{% assign chapters = site.pages | where_exp: "p", "p.path contains 'chapters/post-'" | sort: 'path' %}
+{% assign prev_url = nil %}
+{% assign prev_label = nil %}
+{% assign next_url = nil %}
+{% assign next_label = nil %}
+{% assign last_url = nil %}
+{% assign last_label = nil %}
+{% assign want_next = false %}
+
+{% for p in chapters %}
+  {% assign label = p.title | default: p.name %}
+  {% if p.url == page.url %}
+    {% assign prev_url = last_url %}
+    {% assign prev_label = last_label %}
+    {% assign want_next = true %}
+  {% elsif want_next and next_url == nil %}
+    {% assign next_url = p.url %}
+    {% assign next_label = label %}
+    {% assign want_next = false %}
+  {% endif %}
+  {% assign last_url = p.url %}
+  {% assign last_label = label %}
+{% endfor %}
+
+<div class="chapter-nav">
+  <div>
+    {% if prev_url %}<a href="{{ prev_url }}">← {{ prev_label }}</a>{% endif %}
+  </div>
+  <div>
+    <a href="{{ '/chapters/' | relative_url }}">All Chapters</a>
+  </div>
+  <div>
+    {% if next_url %}<a href="{{ next_url }}">{{ next_label }} →</a>{% endif %}
+  </div>
+  </div>

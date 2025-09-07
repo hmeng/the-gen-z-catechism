@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 12"
+layout: chapter
+title: "Post #12: How do we honor God in worship?"
 ---
 # Post #12: How do we honor God in worship?
 

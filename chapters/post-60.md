@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 60"
+layout: chapter
+title: "Post #60: How do we live in light of eternity?"
 ---
 # Post #60: How do we live in light of eternity?
 

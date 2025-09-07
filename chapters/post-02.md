@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 02"
+layout: chapter
+title: "Post #2: How do we know God exists?"
 ---
 # Post #2: How do we know God exists?
 

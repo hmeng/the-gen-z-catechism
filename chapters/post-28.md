@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 28"
+layout: chapter
+title: "Post #28: Is anyone truly innocent?"
 ---
 # Post #28: Is anyone truly innocent?
 

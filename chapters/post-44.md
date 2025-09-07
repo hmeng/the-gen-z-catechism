@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 44"
+layout: chapter
+title: "Post #44: What is the law for?"
 ---
 # Post #44: What is the law for?
 

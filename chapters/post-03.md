@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 03"
+layout: chapter
+title: "Post #3: What is God like?"
 ---
 # Post #3: What is God like?
 

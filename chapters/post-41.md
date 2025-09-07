@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 41"
+layout: chapter
+title: "Post #41: Why do we need the church?"
 ---
 # Post #41: Why do we need the church?
 

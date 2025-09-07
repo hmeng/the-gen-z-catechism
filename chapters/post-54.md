@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 54"
+layout: chapter
+title: "Post #54: How do we care for creation?"
 ---
 # Post #54: How do we care for creation?
 

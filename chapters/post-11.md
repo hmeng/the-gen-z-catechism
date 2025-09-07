@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 11"
+layout: chapter
+title: "Post #11: What day is for worship?"
 ---
 # Post #11: What day is for worship?
 

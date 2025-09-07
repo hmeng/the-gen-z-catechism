@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 42"
+layout: chapter
+title: "Post #42: What do churches do?"
 ---
 # Post #42: What do churches do?
 

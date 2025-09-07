@@ -1,6 +1,6 @@
 ---
-layout: default
-title: "Post 43"
+layout: chapter
+title: "Post #43: How should we live as Christians?"
 ---
 # Post #43: How should we live as Christians?
 
