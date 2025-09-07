@@ -1,7 +1,8 @@
 title: The Gen Z Catechism
 description: 60 social-media style posts to train up the next generation in the Word of God.
-url: "" # set your custom domain here if using one
-baseurl: "" # for project pages, set to "/<repo>"
+# Production URL and baseurl for GitHub Project Pages
+url: "https://hmeng.github.io" # set to your GitHub Pages user/org URL
+baseurl: "/the-gen-z-catechism" # repo name; leave blank if using a custom domain
 
 # Plugins (all supported by GitHub Pages)
 plugins:
