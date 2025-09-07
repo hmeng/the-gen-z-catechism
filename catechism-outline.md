@@ -1,3 +1,7 @@
+---
+layout: default
+title: "Catechism Outline"
+---
 # The Gen Z Catechism: Reformed Faith for the Digital Age
 *A Social Media Approach to Timeless Truth*
 

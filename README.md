@@ -190,3 +190,25 @@ This project represents a new approach to catechetical instruction that:
 *"The Gen Z Catechism: Where ancient truth meets digital culture, and timeless questions find contemporary answers."*
 
 **Ready to launch: A complete 60-post Reformed catechism designed specifically for Generation Z** 🚀 
+
+## Website (GitHub Pages)
+
+This repository includes a Jekyll site so the catechism can be browsed online.
+
+- Source: site lives at the repository root (uses `index.md`, `chapters/`, and `_config.yml`).
+- Theme: GitHub Pages Cayman via `remote_theme`.
+- Pretty URLs: enabled.
+
+To publish on GitHub Pages:
+
+1. Push to GitHub (main branch).
+2. In your repo Settings → Pages:
+   - Source: select "Deploy from a branch".
+   - Branch: choose `main` and `/ (root)`.
+   - Save. GitHub Pages will build automatically (first deploy may take a minute).
+3. Optional: Set a custom domain and add a `CNAME` file if desired.
+
+Local preview (optional):
+
+- Install Ruby and Bundler, then run `bundle exec jekyll serve`.
+  Note: GitHub builds remotely; local preview isn’t required for publishing.

@@ -1,3 +1,7 @@
+---
+layout: default
+title: "Sample Posts"
+---
 # Sample Posts: Gen Z Catechism Social Feed
 
 ---

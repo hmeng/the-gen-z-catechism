@@ -1,3 +1,7 @@
+---
+layout: default
+title: "Implementation Guide"
+---
 # Implementation Guide: Gen Z Catechism Project
 
 ## 📋 Project Overview
